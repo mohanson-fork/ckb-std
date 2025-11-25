@@ -43,10 +43,10 @@ type-id = ["ckb-hash", "ckb-types"]
 cc = "1.0"
 
 [dependencies]
-ckb-types = { package = "ckb-gen-types", version = "1.0.0", default-features = false, optional = true }
-ckb-hash = { version = "1.0.0", default-features = false, features = [
-  "ckb-contract",
-], optional = true }
+# ckb-types = { package = "ckb-gen-types", version = "1.0.0", default-features = false, optional = true }
+# ckb-hash = { version = "1.0.0", default-features = false, features = ["ckb-contract"], optional = true }
+ckb-types = { git = "https://github.com/mohanson-fork/ckb", package = "ckb-gen-types", branch = "cfi", default-features = false, optional = true }
+ckb-hash = { git = "https://github.com/mohanson-fork/ckb", branch = "cfi", default-features = false, features = ["ckb-contract"], optional = true }
 
 buddy-alloc = { version = "0.6", optional = true }
 ckb-x64-simulator = { version = "0.202.0", optional = true }
